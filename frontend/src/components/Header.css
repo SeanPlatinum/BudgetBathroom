@@ -1,0 +1,279 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+/* Top Bar - Dark Blue */
+.header-top-bar {
+    background: #1a3a5f;
+    color: #ffffff;
+    padding: 8px 0;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.top-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.top-nav-links a:hover {
+    opacity: 0.8;
+}
+
+.divider {
+    color: #ffffff;
+    margin: 0 4px;
+    opacity: 0.6;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+}
+
+.search-icon:hover {
+    opacity: 0.8;
+}
+
+.btn-estimate {
+    background: #1a73e8;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.btn-estimate:hover {
+    background: #1557b0;
+}
+
+.phone-badge {
+    background: #ffd700;
+    padding: 8px 16px;
+    border-radius: 2px;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-badge svg {
+    color: #000000;
+    flex-shrink: 0;
+}
+
+.phone-badge a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.phone-badge a:hover {
+    text-decoration: underline;
+}
+
+/* Main Header - Light Gray */
+.header-main {
+    background: #f5f5f5;
+    padding: 15px 0;
+}
+
+.main-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.logo-image {
+    height: 100%;
+    width: auto;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.main-nav {
+    position: relative;
+}
+
+.main-nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav-menu a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.main-nav-menu a:hover {
+    color: #1a73e8;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #000000;
+    transition: all 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .top-nav-links {
+        display: none;
+    }
+
+    .top-bar-content {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top-bar {
+        padding: 6px 0;
+    }
+
+    .top-bar-content {
+        padding: 0 15px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .top-bar-right {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .btn-estimate {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .phone-badge {
+        padding: 6px 12px;
+    }
+
+    .phone-badge a {
+        font-size: 12px;
+    }
+
+    .main-header-content {
+        padding: 0 15px;
+    }
+
+    .logo-box {
+        padding: 10px 16px;
+    }
+
+    .logo-box h1 {
+        font-size: 18px;
+    }
+
+    .main-nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #f5f5f5;
+        box-shadow: var(--shadow-lg);
+        padding: 20px;
+        min-width: 200px;
+        gap: 20px;
+    }
+
+    .main-nav-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo-box h1 {
+        font-size: 16px;
+    }
+
+    .main-nav-menu a {
+        font-size: 16px;
+    }
+}
+

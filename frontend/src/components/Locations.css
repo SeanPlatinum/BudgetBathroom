@@ -1,0 +1,40 @@
+.locations {
+    padding: 80px 20px;
+}
+
+.locations h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 60px;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.location-item {
+    text-align: center;
+    padding: 30px;
+    background: var(--bg-light);
+    border-radius: 8px;
+}
+
+.location-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.location-item p {
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .locations h2 {
+        font-size: 32px;
+    }
+}
+
